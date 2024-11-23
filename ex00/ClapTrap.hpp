@@ -6,19 +6,19 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 18:16:59 by luifer            #+#    #+#             */
-/*   Updated: 2024/11/23 18:44:03 by luifer           ###   ########.fr       */
+/*   Updated: 2024/11/23 21:24:28 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
 
-#include <iostream>
-#include <string>
-
+# include <iostream>
+# include <string>
 
 #define BLUE "\e[1;94m"
 #define RED "\e[1;91m"
+#define GREEN "\e[0;102m"
 #define RESET "\033[0m"
 
 class ClapTrap
