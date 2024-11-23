@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 18:44:07 by luifer            #+#    #+#             */
-/*   Updated: 2024/11/23 21:25:00 by luifer           ###   ########.fr       */
+/*   Updated: 2024/11/23 21:41:42 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ ClapTrap::ClapTrap (const ClapTrap& input){
 
 //Operator overload constructor
 ClapTrap& ClapTrap::operator=(const ClapTrap &input){
-    if(this != input){
+    if(this != &input){
         this->name = input.name;
         this->hitPoints = input.hitPoints;
         this->energyPoints = input.energyPoints;
@@ -60,12 +60,12 @@ ClapTrap::~ClapTrap(void) {
 void ClapTrap::attack(const std::string& target){
     if(this->energyPoints && this->hitPoints){
         this->energyPoints--;
-        std::cout << BLUE << this->name << "attacked🤺 🤺 🤺 " << target << "generating this: " << this->attackDamage << " points of damage 🤕 🤕 🤕" << std::endl;
+        std::cout << BLUE << this->name << " attacked🤺 🤺 🤺 " << target << " generating this: " << this->attackDamage << " points of damage 🤕 🤕 🤕" << std::endl;
     }
     else if(!energyPoints && hitPoints)
         std::cout << GREEN << this->name << "is a tired warrior 😪 😪 😪 no energy to attack 🪫 🪫 🪫 :( " << RESET << std::endl;
     else
-        std::cout << RED << this->name << " doesn't have more hit points 🌟 🌟 🌟"
+        std::cout << RED << this->name << " doesn't have more hit points 🌟 🌟 🌟" << RESET << std::endl;
 }
 
 //Function to receive damage from oponent, it checks if the object have enough hit point
@@ -94,8 +94,8 @@ void ClapTrap::beRepaired(unsigned int amount){
 }
 
 //Getters
-void ClapTrap::getName() {return (this->name);}
-unsigned int ClapTrap::getHitPoints() {return (this->hitPoints);}
-unsigned int ClapTrap::getEnergyPoints() {return (this->energyPoints);}
-unsigned int ClapTrap::getAttackDamage() {return (this->attackDamage);}
+std::string ClapTrap::getName(void) const {return (this->name);}
+unsigned int ClapTrap::getHitPoints(void) const {return (this->hitPoints);}
+unsigned int ClapTrap::getEnergyPoints(void) const {return (this->energyPoints);}
+unsigned int ClapTrap::getAttackDamage(void) const {return (this->attackDamage);}
 
