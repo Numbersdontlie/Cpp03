@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 18:16:59 by luifer            #+#    #+#             */
-/*   Updated: 2024/11/23 21:43:22 by luifer           ###   ########.fr       */
+/*   Updated: 2024/11/23 22:52:30 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 class ClapTrap
 {
-    private:
+    protected:
         std::string name;
         unsigned int hitPoints;
         unsigned int energyPoints;
@@ -31,7 +31,7 @@ class ClapTrap
 
     public:
         ClapTrap();//default constructor
-        ClapTrap(std::string Name);//constructor with name as parameter
+        ClapTrap(std::string name);//constructor with name as parameter
         ClapTrap(const ClapTrap& input);//copy constructor
         
         ~ClapTrap();//destructor
