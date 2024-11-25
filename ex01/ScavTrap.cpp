@@ -6,14 +6,14 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 22:56:55 by luifer            #+#    #+#             */
-/*   Updated: 2024/11/23 23:07:44 by luifer           ###   ########.fr       */
+/*   Updated: 2024/11/26 00:05:18 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(){
+ScavTrap::ClapTrap(){
     this->name = "no name";
     this->hitPoints = 100;
     this->energyPoints = 50;
@@ -21,30 +21,26 @@ ScavTrap::ScavTrap(){
     std::cout << GREEN << "ScavTrap from default constructor created" << RESET << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name){
-    this->name = name;
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name){
     this->hitPoints = 100;
     this->energyPoints = 50;
     this->attackDamage = 20;
     std::cout << GREEN << "ScavTrap with constructor with name created" << RESET << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& input){
-    this->name = input.name;
-    this->hitPoints = input.hitPoints;
-    this->energyPoints = input.energyPoints;
-    this->attackDamage = input.attackDamage;
+ScavTrap::ScavTrap(const ScavTrap& input) : ClapTrap(input){
     std::cout << GREEN << "ScavTrap with copy constructor created" << RESET << std::endl;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap &input){
     if(this != &input){
-        this->name = input.name;
-        this->hitPoints = input.hitPoints;
-        this->energyPoints = input.energyPoints;
-        this->attackDamage = input.attackDamage;
+        static_cast<ClapTrap&>(*this) = src;
         std::cout << GREEN << "Object from operator constructor created" << RESET << std::endl;
     }
+}
+
+ScavTrap::~ScavTrap(){
+    std::cout << RED << this->name << "is gonne 😿 😿 😿" << RESET << std::endl;
 }
 
 void attack(const std::string &target){
