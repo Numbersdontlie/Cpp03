@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 09:29:35 by luifer            #+#    #+#             */
-/*   Updated: 2024/11/28 09:44:45 by luifer           ###   ########.fr       */
+/*   Updated: 2024/11/28 17:52:33 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,6 @@ FragTrap& FragTrap::operator=(const FragTrap& input){
 
 FragTrap::~FragTrap(){
     std::cout << RED << this->name << "is gonne 😿 😿 😿" << RESET << std::endl;
-}
-
-void FragTrap::attack(const std::string &target){
-    if(this->energyPoints && this->hitPoints){
-        this->energyPoints--;
-        std::cout << GREEN << this->name << " FragTrap attacked🤺 🤺 🤺 " << target << " generating this: " << this->attackDamage << " points of damage 🤕 🤕 🤕" << std::endl;
-    }
-    else if(!energyPoints && hitPoints)
-        std::cout << RED << this->name << "FragTrap is a tired warrior 😪 😪 😪 no energy to attack 🪫 🪫 🪫 :( " << RESET << std::endl;
-    else
-        std::cout << RED << this->name << " FragTrap doesn't have more hit points 🌟 🌟 🌟" << RESET << std::endl;
 }
 
 void FragTrap::highFivesGuys(void){
