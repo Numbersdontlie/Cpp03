@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 18:44:07 by luifer            #+#    #+#             */
-/*   Updated: 2024/11/23 22:53:20 by luifer           ###   ########.fr       */
+/*   Updated: 2024/11/28 17:28:59 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,10 @@ void ClapTrap::beRepaired(unsigned int amount){
     if(this->energyPoints && this->hitPoints){
         this->energyPoints--;
         this->hitPoints += amount;
-        std::cout << GREEN << this->name << "healed himself 💉 💉 💉, it will get: " << amount << " hit points in his conto!" << RESET << std::endl;
+        std::cout << GREEN << this->name << " healed himself 💉 💉 💉, it will get: " << amount << " hit points in his conto!" << RESET << std::endl;
     }
     else
-        std::cout << BLUE << this->name << "have no energy points to heal himself" << RESET << std::endl;
+        std::cout << BLUE << this->name << " have no energy points to heal himself" << RESET << std::endl;
 }
 
 //Getters
