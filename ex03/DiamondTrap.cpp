@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 12:39:28 by luifer            #+#    #+#             */
-/*   Updated: 2024/11/29 14:31:49 by luifer           ###   ########.fr       */
+/*   Updated: 2024/11/29 22:44:30 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& input){
     return *this;
 }
 
-//
+//Destructor
 DiamondTrap::~DiamondTrap(void){
     std::cout<< RED << "DiamondTrap " << this->name << "Was destroyed 😿 😿 😿" << RESET << std::endl;
 }

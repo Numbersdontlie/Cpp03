@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 20:50:47 by luifer            #+#    #+#             */
-/*   Updated: 2024/11/29 14:31:40 by luifer           ###   ########.fr       */
+/*   Updated: 2024/11/29 22:42:18 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ class DiamondTrap : public FragTrap, public ScavTrap
         //derived class
         using ScavTrap::attack;
 
-        
         void whoAmI(void);
 };
 

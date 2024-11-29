@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 09:29:35 by luifer            #+#    #+#             */
-/*   Updated: 2024/11/28 17:52:33 by luifer           ###   ########.fr       */
+/*   Updated: 2024/11/29 22:45:24 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
+//Default constructor
 FragTrap::FragTrap() : ClapTrap(){
     this->hitPoints = 100;
     this->energyPoints = 50;
@@ -21,6 +22,7 @@ FragTrap::FragTrap() : ClapTrap(){
     std::cout << GREEN << "FragTrap default constructor called" << RESET << std::endl;
 }
 
+//Constructor with name as parameter
 FragTrap::FragTrap(std::string name) : ClapTrap(name){
     this->hitPoints = 100;
     this->energyPoints = 50;
@@ -28,10 +30,12 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name){
     std::cout << GREEN << "FragTrap constructor with name called" << RESET << std::endl;
 }
 
+//Copy constructor
 FragTrap::FragTrap(const FragTrap& input) : ClapTrap(input){
     std::cout << GREEN << "FragTrap copy constructor called" << RESET << std::endl;
 }
 
+//Operator overload constructor
 FragTrap& FragTrap::operator=(const FragTrap& input){
     if (this != &input){
         static_cast<FragTrap&>(*this) = input;
@@ -40,10 +44,12 @@ FragTrap& FragTrap::operator=(const FragTrap& input){
     return *this;
 }
 
+//Destructor
 FragTrap::~FragTrap(){
     std::cout << RED << this->name << "is gonne 😿 😿 😿" << RESET << std::endl;
 }
 
+//High five
 void FragTrap::highFivesGuys(void){
     std::cout << GREEN << this->name << " 🖐️ 🖐️ 🖐️ FragTrap is asking for a give me five pal 🖐️ 🖐️ 🖐️" << RESET << std::endl;
 }
