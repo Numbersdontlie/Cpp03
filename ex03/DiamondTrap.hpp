@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 20:50:47 by luifer            #+#    #+#             */
-/*   Updated: 2024/11/29 12:39:24 by luifer           ###   ########.fr       */
+/*   Updated: 2024/11/29 14:31:40 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,14 @@ class DiamondTrap : public FragTrap, public ScavTrap
         DiamondTrap(std::string name);
         DiamondTrap(const DiamondTrap& input);
         DiamondTrap& operator=(const DiamondTrap& input);
-        ~DiamondTrap();
+        ~DiamondTrap(void);
 
-        void whoAmI();
+        //Using keyword elevate accessibility in this
+        //derived class
+        using ScavTrap::attack;
+
+        
+        void whoAmI(void);
 };
 
 #endif
