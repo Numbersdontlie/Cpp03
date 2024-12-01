@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 09:20:18 by luifer            #+#    #+#             */
-/*   Updated: 2024/11/28 17:51:40 by luifer           ###   ########.fr       */
+/*   Updated: 2024/12/01 15:28:23 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 #define GREEN "\e[1;92m"
 #define RESET "\033[0m"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
     public:
         FragTrap();
@@ -32,6 +32,10 @@ class FragTrap : public ClapTrap
         ~FragTrap();
 
         void highFivesGuys(void);
+	
+	protected:
+		static const unsigned int _hit = 100;
+		static const unsigned int _attack = 30;
 };
 
 #endif

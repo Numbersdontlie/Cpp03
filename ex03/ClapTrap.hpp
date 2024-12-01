@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 18:16:59 by luifer            #+#    #+#             */
-/*   Updated: 2024/11/23 22:52:30 by luifer           ###   ########.fr       */
+/*   Updated: 2024/12/01 15:20:55 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,22 @@
 class ClapTrap
 {
     protected:
-        std::string name;
-        unsigned int hitPoints;
-        unsigned int energyPoints;
-        unsigned int attackDamage;
+        std::string _name;
+        unsigned int _hit_points;
+        unsigned int _energy_points;
+        unsigned int _attack_damage;
 
     public:
         ClapTrap();//default constructor
-        ClapTrap(std::string name);//constructor with name as parameter
+        ClapTrap(const std::string name);//constructor with name as parameter
         ClapTrap(const ClapTrap& input);//copy constructor
         
-        ~ClapTrap();//destructor
+        virtual ~ClapTrap();//destructor
 
         ClapTrap& operator = (const ClapTrap& input);//copy assignment operator overload
 
         //member functions
-        void attack(const std::string& target);
+        virtual void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
 

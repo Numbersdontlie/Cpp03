@@ -2,17 +2,17 @@ BLUE=\e[1;94m
 RED=\e[1;91m
 RESET=\033[0m
 
-NAME = fragtrap
+NAME = diamante
 
 CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -Wshadow -std=c++98
 
-SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
-%.o: %.cpp ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
+%.o: %.cpp ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)

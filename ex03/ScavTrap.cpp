@@ -3,27 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 22:56:55 by luifer            #+#    #+#             */
-/*   Updated: 2024/11/28 09:05:30 by luifer           ###   ########.fr       */
+/*   Updated: 2024/12/01 15:45:17 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap() {
-    this->hitPoints = 100;
-    this->energyPoints = 50;
-    this->attackDamage = 20;
+ScavTrap::ScavTrap() : ClapTrap (){
+    this->_hit_points = 100;
+    this->_energy_points = 50;
+    this->_attack_damage = 20;
     std::cout << GREEN << "ScavTrap from default constructor created" << RESET << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name){
-    this->hitPoints = 100;
-    this->energyPoints = 50;
-    this->attackDamage = 20;
+    this->_hit_points = 100;
+    this->_energy_points = 50;
+    this->_attack_damage = 20;
     std::cout << GREEN << "ScavTrap with constructor with name created" << RESET << std::endl;
 }
 
@@ -33,27 +32,27 @@ ScavTrap::ScavTrap(const ScavTrap& input) : ClapTrap(input){
 
 ScavTrap& ScavTrap::operator=(const ScavTrap &input){
     if(this != &input){
-        static_cast<ClapTrap&>(*this) = input;
-        std::cout << GREEN << "Object from operator constructor created" << RESET << std::endl;
-    }
-    return *this;
+    	ClapTrap::operator=(input);
+	}
+	std::cout << GREEN << "ScavTrap with assignation operator created" << RESET << std::endl;
+	return *this;
 }
 
 ScavTrap::~ScavTrap(){
-    std::cout << RED << this->name << "is gonne 😿 😿 😿" << RESET << std::endl;
+    std::cout << RED << this->_name << " is gonne 😿 😿 😿" << RESET << std::endl;
 }
 
 void ScavTrap::attack(const std::string &target){
-    if(this->energyPoints && this->hitPoints){
-        this->energyPoints--;
-        std::cout << BLUE << this->name << " attacked🤺 🤺 🤺 " << target << " generating this: " << this->attackDamage << " points of damage 🤕 🤕 🤕" << std::endl;
+    if(this->_energy_points && this->_hit_points){
+        this->_energy_points--;
+        std::cout << BLUE << this->_name << " attacked🤺 🤺 🤺 " << target << " generating this: " << this->_attack_damage << " points of damage 🤕 🤕 🤕" << std::endl;
     }
-    else if(!energyPoints && hitPoints)
-        std::cout << RED << this->name << "is a tired warrior 😪 😪 😪 no energy to attack 🪫 🪫 🪫 :( " << RESET << std::endl;
+    else if(!_energy_points && _hit_points)
+        std::cout << RED << this->_name << "is a tired warrior 😪 😪 😪 no energy to attack 🪫 🪫 🪫 :( " << RESET << std::endl;
     else
-        std::cout << RED << this->name << " doesn't have more hit points 🌟 🌟 🌟" << RESET << std::endl;
+        std::cout << RED << this->_name << " doesn't have more hit points 🌟 🌟 🌟" << RESET << std::endl;
 }
 
 void ScavTrap::guardGate(){
-    std::cout << BLUE << this->name << " is now in Gate Keeper mode" << RESET << std::endl;
+    std::cout << BLUE << this->_name << " is now in Gate Keeper mode 🛡️ 🛡️ 🛡️" << RESET << std::endl;
 }

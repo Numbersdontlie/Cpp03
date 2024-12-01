@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 20:50:47 by luifer            #+#    #+#             */
-/*   Updated: 2024/11/29 22:42:18 by luifer           ###   ########.fr       */
+/*   Updated: 2024/12/01 15:35:46 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 #include <iostream>
 #include <string>
-#include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 #define BLUE "\e[1;94m"
 #define RED "\e[1;91m"
@@ -26,7 +26,7 @@
 class DiamondTrap : public FragTrap, public ScavTrap
 {
     private:
-        std::string name;
+        std::string _name;
     
     public:
         DiamondTrap();
