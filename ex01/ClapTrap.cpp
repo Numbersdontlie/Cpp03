@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 18:44:07 by luifer            #+#    #+#             */
-/*   Updated: 2024/11/28 17:28:59 by luifer           ###   ########.fr       */
+/*   Updated: 2024/12/01 16:21:41 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &input){
 
 //Destructor
 ClapTrap::~ClapTrap(void) {
-    std::cout << RED << "Object destroyed!" << RESET << std::endl;
+    std::cout << RED << " ClapTrap Object destroyed!" << RESET << std::endl;
 }
 
 //Function to attack, it checks if the energy and hit points required to attack are present

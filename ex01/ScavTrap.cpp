@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 22:56:55 by luifer            #+#    #+#             */
-/*   Updated: 2024/11/28 09:05:30 by luifer           ###   ########.fr       */
+/*   Updated: 2024/12/01 16:32:29 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,22 @@ ScavTrap::ScavTrap(const ScavTrap& input) : ClapTrap(input){
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap &input){
-    if(this != &input){
-        static_cast<ClapTrap&>(*this) = input;
-        std::cout << GREEN << "Object from operator constructor created" << RESET << std::endl;
+    if(this == &input){
+        return (*this);
     }
-    return *this;
+	ClapTrap::operator=(input);
+	std::cout << GREEN << "Object from operator constructor created" << RESET << std::endl;
+    return (*this);
 }
 
 ScavTrap::~ScavTrap(){
-    std::cout << RED << this->name << "is gonne 😿 😿 😿" << RESET << std::endl;
+    std::cout << RED << this->name << " ScavTrap is gonne 😿 😿 😿" << RESET << std::endl;
 }
 
 void ScavTrap::attack(const std::string &target){
     if(this->energyPoints && this->hitPoints){
         this->energyPoints--;
-        std::cout << BLUE << this->name << " attacked🤺 🤺 🤺 " << target << " generating this: " << this->attackDamage << " points of damage 🤕 🤕 🤕" << std::endl;
+        std::cout << BLUE << this->name << " ScavTrap attacked🤺 🤺 🤺 " << target << " generating this: " << this->attackDamage << " points of damage 🤕 🤕 🤕" << std::endl;
     }
     else if(!energyPoints && hitPoints)
         std::cout << RED << this->name << "is a tired warrior 😪 😪 😪 no energy to attack 🪫 🪫 🪫 :( " << RESET << std::endl;
@@ -55,5 +56,5 @@ void ScavTrap::attack(const std::string &target){
 }
 
 void ScavTrap::guardGate(){
-    std::cout << BLUE << this->name << " is now in Gate Keeper mode" << RESET << std::endl;
+    std::cout << BLUE << this->name << " is now in Gate Keeper mode " << RESET << std::endl;
 }

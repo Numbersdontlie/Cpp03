@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 18:44:07 by luifer            #+#    #+#             */
-/*   Updated: 2024/11/23 22:24:33 by luifer           ###   ########.fr       */
+/*   Updated: 2024/12/01 16:10:23 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ClapTrap::ClapTrap(){
     this->hitPoints = 10;
     this->energyPoints = 10;
     this->attackDamage = 0;
-    std::cout << BLUE << "ClapTrap object created" << RESET << std::endl;
+    std::cout << BLUE << "ClapTrap default object created" << RESET << std::endl;
 }
 
 //Constructor with name as parameter
@@ -63,7 +63,7 @@ void ClapTrap::attack(const std::string& target){
         std::cout << BLUE << this->name << " attacked🤺 🤺 🤺 " << target << " generating this: " << this->attackDamage << " points of damage 🤕 🤕 🤕" << std::endl;
     }
     else if(!energyPoints && hitPoints)
-        std::cout << GREEN << this->name << "is a tired warrior 😪 😪 😪 no energy to attack 🪫 🪫 🪫 :( " << RESET << std::endl;
+        std::cout << GREEN << this->name << " is a tired warrior 😪 😪 😪 no energy to attack 🪫 🪫 🪫 :( " << RESET << std::endl;
     else
         std::cout << RED << this->name << " doesn't have more hit points 🌟 🌟 🌟" << RESET << std::endl;
 }
@@ -73,11 +73,11 @@ void ClapTrap::attack(const std::string& target){
 void ClapTrap::takeDamage(unsigned int amount){
     if(this->hitPoints >= amount){
         this->hitPoints -= amount;
-        std::cout << RED << this->name << "lost: " << amount << " of hit points 🎯 🎯 🎯" << RESET << std::endl;
+        std::cout << RED << this->name << " lost: " << amount << " of hit points 🎯 🎯 🎯" << RESET << std::endl;
     }
     else{
         this->hitPoints = 0;
-        std::cout << RED << this->name << "have no more hit points left 😿 😿 😿" << RESET << std::endl;
+        std::cout << RED << this->name << " have no more hit points left 😿 😿 😿" << RESET << std::endl;
     }
 }
 
@@ -87,10 +87,10 @@ void ClapTrap::beRepaired(unsigned int amount){
     if(this->energyPoints && this->hitPoints){
         this->energyPoints--;
         this->hitPoints += amount;
-        std::cout << GREEN << this->name << "healed himself 💉 💉 💉, it will get: " << amount << " hit points in his conto!" << RESET << std::endl;
+        std::cout << GREEN << this->name << " healed himself 💉 💉 💉, it will get: " << amount << " hit points in his conto!" << RESET << std::endl;
     }
     else
-        std::cout << BLUE << this->name << "have no energy points to heal himself" << RESET << std::endl;
+        std::cout << BLUE << this->name << " have no energy points to heal himself" << RESET << std::endl;
 }
 
 //Getters

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 18:44:07 by luifer            #+#    #+#             */
-/*   Updated: 2024/11/23 22:53:20 by luifer           ###   ########.fr       */
+/*   Updated: 2024/12/01 16:33:40 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ClapTrap::ClapTrap(std::string name){
     this->hitPoints = 10;
     this->energyPoints = 10;
     this->attackDamage = 0;
-    std::cout << BLUE << "ClapTrap object with name created" << RESET << std::endl;
+    std::cout << BLUE << " ClapTrap object with name created" << RESET << std::endl;
 }
 
 //Copy constructor
@@ -36,7 +36,7 @@ ClapTrap::ClapTrap (const ClapTrap& input){
     this->hitPoints = input.hitPoints;
     this->energyPoints = input.energyPoints;
     this->attackDamage = input.attackDamage;
-    std::cout << BLUE << "Object from copy constructor created" << RESET << std::endl;
+    std::cout << BLUE << " ClapTrap Object from copy constructor created" << RESET << std::endl;
 }
 
 //Operator overload constructor
@@ -53,7 +53,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &input){
 
 //Destructor
 ClapTrap::~ClapTrap(void) {
-    std::cout << RED << "Object destroyed!" << RESET << std::endl;
+    std::cout << RED << " ClapTrap Object destroyed!" << RESET << std::endl;
 }
 
 //Function to attack, it checks if the energy and hit points required to attack are present

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 09:29:35 by luifer            #+#    #+#             */
-/*   Updated: 2024/11/28 17:52:33 by luifer           ###   ########.fr       */
+/*   Updated: 2024/12/01 16:31:01 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 
 FragTrap::FragTrap() : ClapTrap(){
     this->hitPoints = 100;
-    this->energyPoints = 50;
+    this->energyPoints = 100;
     this->attackDamage = 30;
     std::cout << GREEN << "FragTrap default constructor called" << RESET << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name){
     this->hitPoints = 100;
-    this->energyPoints = 50;
+    this->energyPoints = 100;
     this->attackDamage = 30;
     std::cout << GREEN << "FragTrap constructor with name called" << RESET << std::endl;
 }
@@ -33,15 +33,16 @@ FragTrap::FragTrap(const FragTrap& input) : ClapTrap(input){
 }
 
 FragTrap& FragTrap::operator=(const FragTrap& input){
-    if (this != &input){
-        static_cast<FragTrap&>(*this) = input;
-        std::cout << GREEN << "FragTrap object from operator constructor created" << RESET << std::endl;
-    }
-    return *this;
+    if (this == &input){
+		return (*this);	
+	}
+	ClapTrap::operator=(input);
+	std::cout << GREEN << " FragTrap operator overload constructor called" << RESET << std::endl;
+	return (*this);
 }
 
 FragTrap::~FragTrap(){
-    std::cout << RED << this->name << "is gonne 😿 😿 😿" << RESET << std::endl;
+    std::cout << RED << this->name << " FragTrap is gonne 😿 😿 😿" << RESET << std::endl;
 }
 
 void FragTrap::highFivesGuys(void){
