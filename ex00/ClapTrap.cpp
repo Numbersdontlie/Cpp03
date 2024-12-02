@@ -6,7 +6,7 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 18:44:07 by luifer            #+#    #+#             */
-/*   Updated: 2024/12/01 16:10:23 by lperez-h         ###   ########.fr       */
+/*   Updated: 2024/12/02 10:36:32 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ClapTrap::ClapTrap(){
     this->hitPoints = 10;
     this->energyPoints = 10;
     this->attackDamage = 0;
-    std::cout << BLUE << "ClapTrap default object created" << RESET << std::endl;
+    std::cout << BLUE << " ClapTrap default object created" << RESET << std::endl;
 }
 
 //Constructor with name as parameter
@@ -27,7 +27,7 @@ ClapTrap::ClapTrap(std::string name){
     this->hitPoints = 10;
     this->energyPoints = 10;
     this->attackDamage = 0;
-    std::cout << BLUE << "ClapTrap object with name created" << RESET << std::endl;
+    std::cout << BLUE << " ClapTrap object with name created" << RESET << std::endl;
 }
 
 //Copy constructor
@@ -36,7 +36,7 @@ ClapTrap::ClapTrap (const ClapTrap& input){
     this->hitPoints = input.hitPoints;
     this->energyPoints = input.energyPoints;
     this->attackDamage = input.attackDamage;
-    std::cout << BLUE << "Object from copy constructor created" << RESET << std::endl;
+    std::cout << BLUE << " ClapTrap Object from copy constructor created" << RESET << std::endl;
 }
 
 //Operator overload constructor
@@ -46,14 +46,14 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &input){
         this->hitPoints = input.hitPoints;
         this->energyPoints = input.energyPoints;
         this->attackDamage = input.attackDamage;
-        std::cout << BLUE << "Object from operator constructor created" << RESET << std::endl;
+        std::cout << BLUE << " ClapTrap Object from operator constructor created" << RESET << std::endl;
     }
     return *this;
 }
 
 //Destructor
 ClapTrap::~ClapTrap(void) {
-    std::cout << RED << "Object destroyed!" << RESET << std::endl;
+    std::cout << RED << " ClapTrap Object destroyed!" << RESET << std::endl;
 }
 
 //Function to attack, it checks if the energy and hit points required to attack are present

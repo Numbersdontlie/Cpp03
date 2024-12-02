@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 21:25:47 by luifer            #+#    #+#             */
-/*   Updated: 2024/11/23 21:35:10 by luifer           ###   ########.fr       */
+/*   Updated: 2024/12/02 10:38:49 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int main(){
     Goku.attack("Vegeta");
     Vegeta.takeDamage(2);
     Vegeta.takeDamage(2);
-    std::cout << GREEN << Vegeta.getName() << " has this energy points so far:" << Vegeta.getEnergyPoints() << "and this hit points: " << Vegeta.getHitPoints() << RESET << std::endl;
+    std::cout << GREEN << Vegeta.getName() << " has this energy points so far: " << Vegeta.getEnergyPoints() << "and this hit points: " << Vegeta.getHitPoints() << RESET << std::endl;
     Vegeta.beRepaired(4);
-    std::cout << BLUE << Vegeta.getName() << " has this energy points so far:" << Vegeta.getEnergyPoints() << "and this hit points: " << Vegeta.getHitPoints() << RESET << std::endl;
+    std::cout << BLUE << Vegeta.getName() << " has this energy points so far: " << Vegeta.getEnergyPoints() << "and this hit points: " << Vegeta.getHitPoints() << RESET << std::endl;
 
     Alguien.attack("Goku");
     Goku.takeDamage(1);
